@@ -2,18 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpdateandFixedUpdate : MonoBehaviour
+public class DestroyOther : MonoBehaviour
 {
-
     // Start is called before the first frame update
-    void FixedUpdate ()
-    {
-        Debug.Log("FixedUpdate time : + time.deltaaTime");
-    }
+    public GameObject other;
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Update time :" + Time.deltaTime);
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Destroy(other);
+        }
     }
 }
